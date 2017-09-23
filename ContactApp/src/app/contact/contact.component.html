@@ -1,33 +1,35 @@
 <h1>Contact</h1>
 <label>Id</label><input type="text" [(value)]="id"/>
 <button (click)="getContact()">Click</button>
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>GivenName</th>
-      <th>Surname</th>
-      <th>Phone</th>
-      <th>Fax</th>
-      <th>Street</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Post Code</th>
-      <th>Country</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let contact of contactService.contacts">
-      <td>{{contact.title}}</td>
-      <td>{{contact.givenName}}</td>
-      <td>{{contact.surname}}</td>
-      <td>{{contact.phone}}</td>
-      <td>{{contact.fax}}</td>
-      <td>{{contact.street}}</td>
-      <td>{{contact.city}}</td>
-      <td>{{contact.state}}</td>
-      <td>{{contact.postCode}}</td>
-      <td>{{contact.country}}</td>
-    </tr>
-  </tbody>
-</table>
+<div *ngIf="contactService.contacts != null">
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>GivenName</th>
+        <th>Surname</th>
+        <th>Phone</th>
+        <th>Fax</th>
+        <th>Street</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Post Code</th>
+        <th>Country</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contact of contactService.contacts">
+        <td>{{contact.title}}</td>
+        <td>{{contact.givenName}}</td>
+        <td>{{contact.surname}}</td>
+        <td>{{contact.phone}}</td>
+        <td>{{contact.fax}}</td>
+        <td>{{contact.street}}</td>
+        <td>{{contact.city}}</td>
+        <td>{{contact.state}}</td>
+        <td>{{contact.postCode}}</td>
+        <td>{{contact.country}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
