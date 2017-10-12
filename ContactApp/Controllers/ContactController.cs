@@ -13,7 +13,8 @@ namespace ContactApp.Controllers
       [HttpPost]
       public ContactReqRes showContacts (ContactReqRes res)
       {
-         return new Contact().showContact(res);
+          new Contact().showContact(res);
+          return res;
       }
   }
 }

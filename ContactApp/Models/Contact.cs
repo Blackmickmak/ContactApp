@@ -13,7 +13,7 @@ namespace ContactApp.Models
   }
   public class Contact: BaseModel
   {
-    public int id { get; set; }
+    public decimal id { get; set; }
     public string title { get; set; }
     public string surname { get; set; }
     public string givenName { get; set; }
@@ -58,7 +58,7 @@ namespace ContactApp.Models
           contactList.contactList.Add(contact);
         }
       }
-      catch (Exception ex)
+      catch (SAException ex)
       {
 
         throw ex;
