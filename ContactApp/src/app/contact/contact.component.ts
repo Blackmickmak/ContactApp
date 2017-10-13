@@ -15,6 +15,5 @@ export class ContactComponent {
     getContact()
     {
         this.contactService.getContact(this.id);
-        console.log("it is clicked");
     }
 }

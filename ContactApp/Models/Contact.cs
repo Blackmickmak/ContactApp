@@ -25,10 +25,7 @@ namespace ContactApp.Models
     public string postCode { get; set; }
     public string country { get; set; }
 
-    public Contact()
-    {
-
-    }
+    public Contact(){}
 
     public ContactReqRes showContact (ContactReqRes contactList)
     {
