@@ -9,8 +9,9 @@ namespace ContactApp.Models
   public class BaseModel
   {
     protected SAConnection conn = new SAConnection("Data Source=SQL Anywhere 12 Demo; UID = DBA; PWD = sql");
-    protected SACommand cmd;
-    protected SADataReader sdr;
+    protected SACommand cmd = null;
+    protected SADataReader sdr = null;
+    protected SATransaction trn = null;
 
   }
 }

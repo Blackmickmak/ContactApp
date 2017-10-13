@@ -1,4 +1,5 @@
-import { NgModule }      from '@angular/core';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpModule } from '@angular/http';
 
@@ -8,7 +9,7 @@ import { ContactComponent } from './../app/contact/contact.component';
 import { ContactService } from './../app/contact/contact.service';
 
 @NgModule({
-    imports: [BrowserModule, HttpModule],
+    imports: [BrowserModule, HttpModule, FormsModule],
   declarations: [AppComponent, ContactComponent ],
   bootstrap: [AppComponent],
   providers: [ContactService ]

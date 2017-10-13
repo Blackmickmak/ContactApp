@@ -10,7 +10,7 @@ import { ContactService } from './contact.service';
 export class ContactComponent {
     constructor(private contactService: ContactService){}
 
-    @Input() id:number = 0;
+    @Input() id:number;
 
     getContact()
     {

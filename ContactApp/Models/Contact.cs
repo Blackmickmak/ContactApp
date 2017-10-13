@@ -33,11 +33,14 @@ namespace ContactApp.Models
     public ContactReqRes showContact (ContactReqRes contactList)
     {
       Contact contact;
+      contactList.contactList = new List<Contact>();
       
       try
       {
         conn.Open();
-        cmd = new SACommand("showContacts", conn);
+       
+        
+        cmd = new SACommand("ShowContacts", conn);
         cmd.CommandType = System.Data.CommandType.StoredProcedure;
         cmd.Parameters.Add(new SAParameter( "@contact_ID", contactList.id));
 
@@ -47,16 +50,17 @@ namespace ContactApp.Models
         {
           contact = new Contact();
           contact.givenName = (string)sdr["GivenName"];
-          contact.givenName = (string)sdr["Surname"];
-          contact.street = (string)sdr["street"];
-          contact.state = (string)sdr["Sate"];
+          contact.surname = (string)sdr["Surname"];
+          contact.street = (string)sdr["Street"];
+          contact.state = (string)sdr["State"];
           contact.country = (string)sdr["Country"];
-          contact.postCode = (string)sdr["PostCode"];
+          //contact.postCode = (string)sdr["Postcode"];
           contact.phone = (string)sdr["Phone"];
           contact.fax = (string)sdr["Fax"];
 
           contactList.contactList.Add(contact);
         }
+        sdr.Close();
       }
       catch (SAException ex)
       {
