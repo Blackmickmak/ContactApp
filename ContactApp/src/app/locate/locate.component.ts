@@ -22,20 +22,30 @@ export class LocateComponent {
     displayLocation(position: any)
     {
         let latitude = position.coords.latitude;
-        let longitutde = position.coords.longitude;
+        let longitude = position.coords.longitude;
+        let div = document.getElementById("location");
 
-        this.yourLocation = "You are at the latitude " + ", Longitude " + longitutde;
+        div.innerHTML = "You are at the latitude " + latitude + ", Longitude " + longitude;
 
-        let ourCoords = { latitude: 47.624851, longitude: - 122.52099 };
+        let ourCoords = { latitude: 47.624851, longitude: -122.52099 };
 
-        let km = this.computeDistance(position.coords, ourCoords);
+
+        let startLatRads = (position.coords.latitude * Math.PI) / 180;
+        let startLongRads = (position.coords.longitude * Math.PI) / 180;
+        let destLatRads = (ourCoords.latitude * Math.PI) / 180;
+        let destLongRads = (ourCoords.longitude * Math.PI) / 180;
+
+        let Radius = 6371;
+        let km = Math.acos(Math.sin(startLatRads) * Math.sin(destLatRads) +
+            Math.cos(startLatRads) * Math.cos(destLatRads) * Math.cos(startLongRads - destLongRads)) * Radius;
+
+        //let km = this.computeDistance(position.coords, ourCoords);
         let distance = document.getElementById("distance");
         distance.innerHTML = "You are " + km + " km from the WickedlySmart HQ";
     }
 
     computeDistance(startCoords: any, destCoords: any)
     {
-
         let startLatRads = this.degreesToRadians(startCoords.latitude);
         let startLongRads = this.degreesToRadians(startCoords.longitude);
         let destLatRads = this.degreesToRadians(destCoords.latitude);
@@ -56,6 +66,8 @@ export class LocateComponent {
             errorMessage = errorMessage + " " + error.message;
             this.errorLocation = errorMessage;
         }
+        let div = document.getElementById("location");
+        div.innerHTML = errorMessage;
     }
 
     degreesToRadians(degrees: any)
