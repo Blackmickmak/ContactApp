@@ -1,5 +1,5 @@
 <h1>Contact</h1>
-<label>Id</label><input type="text" [(ngModel)]="id"/>
+<label>Id</label><input type="text" [(ngModel)]="id" (keyup.enter)="getContact()"/>
 <button (click)="getContact()">Click</button>
 <div *ngIf="contactService.contacts != null">
   <table>
