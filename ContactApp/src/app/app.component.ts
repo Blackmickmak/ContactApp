@@ -5,6 +5,8 @@ import { Component } from '@angular/core';
   template: `<h1>Hello {{name}}</h1> <br>
   <contact-app></contact-app>
 <app-locate></app-locate>
+Please upload a excel file here
+<excelreader-app></excelreader-app>
 `,
 })
 export class AppComponent  { name = 'Angular'; }

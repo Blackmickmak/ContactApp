@@ -16,7 +16,7 @@
     <RootNamespace>ContactApp</RootNamespace>
     <AssemblyName>ContactApp</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -120,6 +120,7 @@
     <Content Include="Global.asax" />
     <Content Include="src\app\contact\contact.component.css" />
     <Content Include="src\app\contact\contact.component.html" />
+    <Content Include="src\app\excelreader\excelreader.component.html" />
     <Content Include="src\app\locate\locate.component.css" />
     <Content Include="src\index.html" />
     <Content Include="src\styles.css" />
@@ -165,6 +166,9 @@
     <TypeScriptCompile Include="src\app\contact\contact.component.ts" />
     <TypeScriptCompile Include="src\app\contact\contact.service.ts" />
     <TypeScriptCompile Include="src\app\contact\contact.ts" />
+    <TypeScriptCompile Include="src\app\excelreader\excelreader.component.ts" />
+    <TypeScriptCompile Include="src\app\excelreader\excelreader.service.ts" />
+    <TypeScriptCompile Include="src\app\excelreader\excelreader.ts" />
     <TypeScriptCompile Include="src\app\locate\locate.component.ts" />
   </ItemGroup>
   <ItemGroup>
@@ -192,7 +196,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50910</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:50910/</IISUrl>
+          <IISUrl>http://localhost/ContactApp</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

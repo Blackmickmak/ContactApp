@@ -32,8 +32,8 @@ namespace ContactApp.Models
       Contact contact;
       contactList.contactList = new List<Contact>();
 
-      CaculationService.CalcServiceSoapClient cal = new CaculationService.CalcServiceSoapClient();
-      int add = cal.Add(4, 5);
+      //CaculationService.CalcServiceSoapClient cal = new CaculationService.CalcServiceSoapClient();
+      //int add = cal.Add(4, 5);
       try
       {
         conn.Open();
