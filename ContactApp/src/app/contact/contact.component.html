@@ -2,13 +2,14 @@
 <label>Id</label><input type="text" [(ngModel)]="id" (keyup.enter)="getContact()"/>
 <button (click)="getContact()">Click</button>
 <div *ngIf="contactService.contacts != null">
+  <label>Search</label><input type="text" [(ngModel)]="searchText" />
   <table>
     <thead>
       <tr>
         <th>GivenName</th>
         <th>Surname</th>
         <th>Phone</th>
-        <th>Fax</th>
+        <!--<th>Fax</th>-->
         <th>Street</th>
         <th>City</th>
         <th>State</th>
@@ -16,11 +17,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let contact of contactService.contacts">
+      <tr *ngFor="let contact of contactService.contacts | filter: searchText">
         <td>{{contact.givenName}}</td>
         <td>{{contact.surname}}</td>
         <td>{{contact.phone}}</td>
-        <td>{{contact.fax}}</td>
+
+        <!--<td>{{contact.fax}}</td>-->
         <td>{{contact.street}}</td>
         <td>{{contact.city}}</td>
         <td>{{contact.state}}</td>

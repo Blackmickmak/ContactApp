@@ -13,6 +13,7 @@ export class Contact {
 }
 
 export class ContactReqRes {
-    public id: number;
+  public id: number;
+  public message: string[];
     public contactList:  Contact[];
 }

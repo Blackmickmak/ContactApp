@@ -14,9 +14,17 @@ export class ContactService{
         let request: ContactReqRes = new ContactReqRes();
         request.id = id;
         this.http.post("/api/Contact/showContacts", request)
-            .subscribe(res => {
-                let response: ContactReqRes = res.json();
-                this.contacts = response.contactList;
-            })
+          .subscribe(res => {
+            let response: ContactReqRes = res.json();
+            let error: string = "";
+            if (response.message.length > 0) {
+              for (let er of response.message) {
+                error += er + "\n";
+              }
+              alert("Error: " + error);
+            } else {
+              this.contacts = response.contactList;
+            }
+          });
     };
 }

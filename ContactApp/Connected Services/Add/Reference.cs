@@ -8,27 +8,27 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ContactApp.CaculationService {
+namespace ContactApp.Add {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="CaculationService.CalcServiceSoap")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://mikemakanda.org/", ConfigurationName="Add.CalcServiceSoap")]
     public interface CalcServiceSoap {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Add", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://mikemakanda.org/Add", ReplyAction="*")]
         int Add(int a, int b);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Add", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://mikemakanda.org/Add", ReplyAction="*")]
         System.Threading.Tasks.Task<int> AddAsync(int a, int b);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface CalcServiceSoapChannel : ContactApp.CaculationService.CalcServiceSoap, System.ServiceModel.IClientChannel {
+    public interface CalcServiceSoapChannel : ContactApp.Add.CalcServiceSoap, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class CalcServiceSoapClient : System.ServiceModel.ClientBase<ContactApp.CaculationService.CalcServiceSoap>, ContactApp.CaculationService.CalcServiceSoap {
+    public partial class CalcServiceSoapClient : System.ServiceModel.ClientBase<ContactApp.Add.CalcServiceSoap>, ContactApp.Add.CalcServiceSoap {
         
         public CalcServiceSoapClient() {
         }

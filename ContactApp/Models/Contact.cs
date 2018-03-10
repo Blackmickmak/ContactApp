@@ -8,8 +8,14 @@ namespace ContactApp.Models
 {
   public class ContactReqRes
   {
-    public int id { get; set; } 
+    public int id { get; set; }
+    public List<string> message { get; set; }
     public List<Contact> contactList { get; set; }
+
+    public ContactReqRes()
+    {
+      message = new List<string>();
+    }
   }
   public class Contact: BaseModel
   {
@@ -27,13 +33,13 @@ namespace ContactApp.Models
 
     public Contact(){}
 
-    public ContactReqRes showContact (ContactReqRes contactList)
+    public ContactReqRes showContact (ContactReqRes reqRes)
     {
       Contact contact;
-      contactList.contactList = new List<Contact>();
+      reqRes.contactList = new List<Contact>();
 
-      //CaculationService.CalcServiceSoapClient cal = new CaculationService.CalcServiceSoapClient();
-      //int add = cal.Add(4, 5);
+      Add.CalcServiceSoapClient cal = new Add.CalcServiceSoapClient("CalcServiceSoap");
+      int add = cal.Add(4, 5);
       try
       {
         conn.Open();
@@ -41,7 +47,7 @@ namespace ContactApp.Models
         
         cmd = new SACommand("ShowContacts", conn);
         cmd.CommandType = System.Data.CommandType.StoredProcedure;
-        cmd.Parameters.Add(new SAParameter( "@contact_ID", contactList.id));
+        cmd.Parameters.Add(new SAParameter( "@contact_ID", null));
 
         sdr = cmd.ExecuteReader();
 
@@ -57,21 +63,18 @@ namespace ContactApp.Models
           contact.phone = (string)sdr["Phone"];
           contact.fax = (string)sdr["Fax"];
 
-          contactList.contactList.Add(contact);
+          reqRes.contactList.Add(contact);
         }
-        sdr.Close();
       }
       catch (SAException ex)
       {
 
-        throw ex;
-      }
-      finally
-      {
-        conn.Close();
+        reqRes.message.Add(ex.Message);
       }
       
-      return contactList;
+        conn.Close();
+         
+      return reqRes;
     }
 
   }

@@ -16,7 +16,7 @@
     <RootNamespace>ContactApp</RootNamespace>
     <AssemblyName>ContactApp</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -110,10 +110,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\CaculationService\CalcService.disco" />
-    <None Include="Connected Services\CaculationService\configuration91.svcinfo" />
-    <None Include="Connected Services\CaculationService\configuration.svcinfo" />
-    <None Include="Connected Services\CaculationService\Reference.svcmap">
+    <None Include="Connected Services\Add\CalcService.disco" />
+    <None Include="Connected Services\Add\configuration91.svcinfo" />
+    <None Include="Connected Services\Add\configuration.svcinfo" />
+    <None Include="Connected Services\Add\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -129,7 +129,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Connected Services\CaculationService\Reference.cs">
+    <Compile Include="Connected Services\Add\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -145,7 +145,7 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="package.json" />
-    <None Include="Connected Services\CaculationService\CalcService.wsdl" />
+    <None Include="Connected Services\Add\CalcService.wsdl" />
     <None Include="packages.config" />
     <Content Include="src\tsconfig.json" />
     <Content Include="src\app\locate\locate.component.html" />
@@ -170,6 +170,7 @@
     <TypeScriptCompile Include="src\app\excelreader\excelreader.service.ts" />
     <TypeScriptCompile Include="src\app\excelreader\excelreader.ts" />
     <TypeScriptCompile Include="src\app\locate\locate.component.ts" />
+    <TypeScriptCompile Include="src\app\search\search.pipe.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
@@ -178,7 +179,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\CaculationService\" />
+    <WCFMetadataStorage Include="Connected Services\Add\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -196,7 +197,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50910</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost/ContactApp</IISUrl>
+          <IISUrl>http://localhost:50910/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

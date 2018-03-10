@@ -10,7 +10,8 @@ import { ContactService } from './contact.service';
 export class ContactComponent {
     constructor(private contactService: ContactService){}
 
-    @Input() id:number;
+    @Input() id: any;
+    searchText: string = '';
 
     getContact()
     {
