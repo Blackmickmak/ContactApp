@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { ContactService } from './contact.service';
+
 
 @Component({
     selector: 'contact-app',
@@ -8,13 +9,14 @@ import { ContactService } from './contact.service';
 })
 
 export class ContactComponent {
-    constructor(private contactService: ContactService){}
+  constructor(private contactService: ContactService){}
 
     @Input() id: any;
     searchText: string = '';
-
+   
     getContact()
     {
-        this.contactService.getContact(this.id);
-    }
+      this.contactService.getContact(this.id);
+  }
+
 }

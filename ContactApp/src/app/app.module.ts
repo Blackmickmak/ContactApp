@@ -13,8 +13,8 @@ import { FilterPipe } from './search/search.pipe';
 
 @NgModule({
     imports: [BrowserModule, HttpModule, FormsModule],
-    declarations: [AppComponent, ContactComponent, LocateComponent, ExcelReaderComponent, FilterPipe ],
+    declarations: [AppComponent, ContactComponent, LocateComponent, ExcelReaderComponent, FilterPipe],
   bootstrap: [AppComponent],
-  providers: [ContactService ]
+  providers: [ContactService]
 })
 export class AppModule { }

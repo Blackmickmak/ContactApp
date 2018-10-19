@@ -1,3 +1,18 @@
-table tr td {
-  padding:  5px;
+ th, td {
+  padding:  10px;
+  text-align:center;
+}
+
+ th{
+   background-color:  black;
+   color:white;
+ }
+ tr:nth-child(even){
+   background-color:#e8e8e8
+ }
+
+tr th:hover {
+  background-color: skyblue;
+  cursor: -webkit-grab;
+  cursor: grab;
 }

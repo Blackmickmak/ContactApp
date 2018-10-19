@@ -7,7 +7,8 @@ import { ContactReqRes, Contact } from './../contact/contact';
 
 @Injectable()
 export class ContactService{
-    contacts: Contact[];
+  contacts: Contact[];
+  copyContacts: Contact[];
     constructor(private http: Http) { }
   
     getContact(id: number) {
@@ -24,7 +25,15 @@ export class ContactService{
               alert("Error: " + error);
             } else {
               this.contacts = response.contactList;
+              this.copyContacts = this.contacts
             }
           });
-    };
+  };
+  
+  sortColumn(column: any) {
+    console.log(column);
+    
+  }
+
+  sort(){}
 }

@@ -25,7 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <TypeScriptToolsVersion>2.5</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>3.0</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -110,6 +110,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ClassDiagram1.cd" />
     <None Include="Connected Services\Add\CalcService.disco" />
     <None Include="Connected Services\Add\configuration91.svcinfo" />
     <None Include="Connected Services\Add\configuration.svcinfo" />
@@ -118,6 +119,7 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="Global.asax" />
+    <Content Include="src\app\app.component.css" />
     <Content Include="src\app\contact\contact.component.css" />
     <Content Include="src\app\contact\contact.component.html" />
     <Content Include="src\app\excelreader\excelreader.component.html" />

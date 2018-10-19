@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
 Please upload a excel file here
 <excelreader-app></excelreader-app>
 `,
+  styleUrls:['./app.component.css']
 })
 export class AppComponent  { name = 'Angular'; }
