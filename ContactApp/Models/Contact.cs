@@ -66,7 +66,7 @@ namespace ContactApp.Models
           reqRes.contactList.Add(contact);
         }
       }
-      catch (SAException ex)
+      catch (Exception ex)
       {
 
         reqRes.message.Add(ex.Message);
