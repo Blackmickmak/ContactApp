@@ -9,7 +9,7 @@ namespace ContactApp.Models
 {
   public class BaseModel
   {
-    protected SAConnection conn = new SAConnection("Data Source=SQL Anywhere 12 Demo; UID = DBA; PWD = sql");
+    protected SAConnection conn = new SAConnection(ConfigurationManager.AppSettings["AnywhereDemo"]);
     protected SACommand cmd = null;
     protected SADataReader sdr = null;
     protected SATransaction trn = null;
