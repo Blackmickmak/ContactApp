@@ -16,7 +16,8 @@ export class ContactComponent {
    
     getContact()
     {
+      this.contactService.getUserId();
       this.contactService.getContact(this.id);
-  }
+    }
 
 }

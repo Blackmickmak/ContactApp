@@ -140,6 +140,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AuthorizeToken.cs" />
     <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -173,6 +174,7 @@
     <TypeScriptCompile Include="src\app\excelreader\excelreader.ts" />
     <TypeScriptCompile Include="src\app\locate\locate.component.ts" />
     <TypeScriptCompile Include="src\app\search\search.pipe.ts" />
+    <TypeScriptCompile Include="src\app\user\user.service.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

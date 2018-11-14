@@ -8,6 +8,7 @@ using System.Web.Http;
 
 namespace ContactApp.Controllers
 {
+    [AuthorizeToken]
     public class ContactController : ApiController
     {
       [HttpPost]
